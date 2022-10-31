@@ -15,10 +15,10 @@ Of course, there are many better repositories with similar features on github
 
 ## Install
 ```bash
-go install github.com/summer-boythink/subgit
+go install github.com/summer-boythink/subgit@latest
 ```
 ```bash
-subgit --help
+subgit help
 ```
 
 ## Features

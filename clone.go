@@ -3,6 +3,7 @@ package main
 import (
 	"os"
 	"os/exec"
+	"path/filepath"
 
 	log "github.com/sirupsen/logrus"
 	"github.com/spf13/cobra"
@@ -79,7 +80,7 @@ func (c *CloneOption) run() error {
 		//TODO:check file
 
 		newSourceFile := sourceName + "/" + wantKeepFile
-		destFile := storeDir + splitFilename(wantKeepFile)
+		destFile := storeDir + filepath.Base(wantKeepFile)
 		if err := os.Rename(newSourceFile, destFile); err != nil {
 			log.Errorln("keep file failed")
 		}

@@ -38,15 +38,6 @@ func convertGitUrlToFolderName(url string) string {
 	return name
 }
 
-func splitFilename(url string) string {
-	urls := strings.Split(url, "/")
-	if len(urls) == 0 {
-		return url
-	}
-	name := urls[len(urls)-1:][0]
-	return name
-}
-
 // Remove the git folder when an error occurs
 func rmDir(name string) bool {
 	if err := os.RemoveAll(name); err != nil {
